@@ -260,11 +260,9 @@ class _BetterPlayerCupertinoControlsState
             decoration: BoxDecoration(color: backgroundColor),
             child: Center(
               child: Icon(
-                _betterPlayerController!.isFullScreen
-                    ? _controlsConfiguration.fullscreenDisableIcon
-                    : _controlsConfiguration.fullscreenEnableIcon,
-                color: iconColor,
-                size: iconSize,
+                CupertinoIcons.clear,
+                color: Colors.white,
+                size: 30,
               ),
             ),
           ),
@@ -613,12 +611,7 @@ class _BetterPlayerCupertinoControlsState
 
   void _onExpandCollapse() {
     changePlayerControlsNotVisible(true);
-    _betterPlayerController!.toggleFullScreen();
-    _expandCollapseTimer = Timer(_controlsConfiguration.controlsHideTime, () {
-      setState(() {
-        cancelAndRestartTimer();
-      });
-    });
+    Navigator.pop(context);
   }
 
   Widget _buildProgressBar() {
