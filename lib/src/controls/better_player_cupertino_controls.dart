@@ -248,7 +248,7 @@ class _BetterPlayerCupertinoControlsState
     return GestureDetector(
       onTap: _onExpandCollapse,
       child: AnimatedOpacity(
-        opacity: controlsNotVisible ? 0.0 : 1.0,
+        opacity: 1.0,
         duration: _controlsConfiguration.controlsHideTime,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(10),
